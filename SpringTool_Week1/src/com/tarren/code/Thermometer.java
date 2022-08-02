@@ -6,10 +6,10 @@ public class Thermometer {
 	private int degreesF;
 	private int degreesC;
 	private String name;
-	private int[] tempReadings; //hopefully specified as a length of 3
+	private int[] tempReadings = new int[3]; //hopefully specified as a length of 3
 	
 	public Thermometer() {//no args constructor
-		
+		super();//this is important for the no args constructor. this is method overloading because we have two methods with the same name
 	}
 	
 	public Thermometer(int degreesF, int degreesC, String name, int[]tempReadings) {
@@ -64,7 +64,18 @@ public class Thermometer {
 		return (int) ((f-32) / 1.8);
 	}
 	public static void calculateAvgTemp(int[] temps) {
-		System.out.println((temps[0] +temps[1] + temps[2])/3);// not sure if i need anything else here
+		//counter for total temp, starting at 0
+		int total = 0;
+		//iterate thru the array
+		for(int i =0; i<temps.length; i++) {
+			total += temps[i];
+		}
+		System.out.println("The average temperature is: " + (total/3));
+		//for each temp dd it to the toal counter
+		
+		//end of loop
+		//tertun the total temps divided by 3
+		
 	}
 	
 		
